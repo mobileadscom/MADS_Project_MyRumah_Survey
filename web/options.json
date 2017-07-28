@@ -1,0 +1,103 @@
+{
+	"sections" : [
+		{
+			"name" : "Assets",
+			"inputs" : [
+				{"title":"Start's Background", "value":"img/bg.png", "placeholder":"", "inputClass":"", "target" : "start_bg" },
+				{"title":"Question's Background", "value":"img/bg_question.png", "placeholder":"", "inputClass":"", "target" : "q_bg" },
+				{"title":"Form's Background", "value":"img/bg_leadgen.png", "placeholder":"", "inputClass":"", "target" : "form_bg" },
+				{"title":"Coupon Image", "value":"img/promo_code.png", "placeholder":"", "inputClass":"", "target" : "end_bg" },
+				{"title":"Submit's Image", "value":"img/submit.png", "placeholder":"", "inputClass":"", "target" : "submit" }
+			]
+		},
+		{
+			"name" : "Questions",
+			"inputs" : [
+				{"title":"Question 1", "value":"Where did you hear about MyRumah?", "placeholder":"", "inputClass":"", "target" : "q1" },
+				{"title":"Answer 1", "value":"News Paper,Radio,TV Ad,FB,Website,Others", "placeholder":"", "inputClass":"", "target" : "a1" },
+				{"title":"Question 2", "value":"Do you intend to buy a property in next 6 months? If Yes, what is your budget for monthly investment?", "placeholder":"", "inputClass":"", "target" : "q2" },
+				{"title":"Answer 2", "value":"500 below,1000 below,1500 below,2000 below", "placeholder":"", "inputClass":"", "target" : "a2" },
+				{"title":"Question 3", "value":"Do you intend to buy for Own Stay or Investment?", "placeholder":"", "inputClass":"", "target" : "q3" },
+				{"title":"Answer 3", "value":"Own Stay,Investment", "placeholder":"", "inputClass":"", "target" : "a3" },
+				{"title":"Question 4", "value":"What type of Property interests you?", "placeholder":"", "inputClass":"", "target" : "q4" },
+				{"title":"Answer 4", "value":"Bungalow,Link House,Condo,Studio,SOHO,Others", "placeholder":"", "inputClass":"", "target" : "a4" },
+				{"title":"Question 5", "value":"What is your targeted property value for your preferred property?", "placeholder":"", "inputClass":"", "target" : "q5" },
+				{"title":"Answer 5", "value":"RM 1mil and below,RM 750.000 and below,RM 500.000 and below,RM 250.000 and below", "placeholder":"", "inputClass":"", "target" : "a5" },
+				{"title":"Question 6", "value":"In which region do you prefer to own a property?", "placeholder":"", "inputClass":"", "target" : "q6" },
+				{"title":"Answer 6", "value":"Northern,Central,Southern,East Coast", "placeholder":"", "inputClass":"", "target" : "a6" },
+				{"title":"Question 7", "value":"What type of property topics are you interested in?", "placeholder":"", "inputClass":"", "target" : "q7" },
+				{"title":"Answer 7", "value":"Strategy & Tips to invest,How to get loan approval successfully,Tenant Management,Real Property Gain Tax,Mortgage Reduction,Interior Design,Lease To Own,Others", "placeholder":"", "inputClass":"", "target" : "a7" },
+				{"title":"Question 8", "value":"What is the most important factor in your buying decision ?", "placeholder":"", "inputClass":"", "target" : "q8" },
+				{"title":"Answer 8", "value":"Low Down payment,Location,Reputation of Developer,Concept of Project,Competitive Selling Price,Reputation of Designer,Guaranteed Return of investment", "placeholder":"", "inputClass":"", "target" : "a8" }
+			]
+		},
+		{
+			"name" : "leadgen",
+			"inputs" : [
+				{"title":"Email", "value":"", "placeholder":"ninjoe@mobileads.com,adhie@mobileads.com", "inputClass":"", "target" : "email" }
+			],
+			"leadgens" : [
+				{"title":"First Input", "value":"text,Name,required,Name", "placeholder":"type,name,required,placeholder", "inputClass":"", "target" : "first" },
+				{"title":"Second Input", "value":"number,Phone,required,Phone", "placeholder":"type,name,required,placeholder", "inputClass":"", "target" : "second" },
+				{"title":"Third Input", "value":"email,Email,required,Email", "placeholder":"type,name,required,placeholder", "inputClass":"", "target" : "third" }
+			]
+		}
+	],
+	"property" : {
+		"start_bg" : "img/bg.png",
+		"q_bg" : "img/bg_question.png",
+		"form_bg" : "img/bg_leadgen.png",
+		"submit" : "img/submit.png",
+		"end_bg" : "img/promo_code.png",
+		"q1" : "Where did you hear about MyRumah?",
+		"a1" : "News Paper,Radio,TV Ad,FB,Website,Others",
+		"q2" : "Do you intend to buy a property in next 6 months? If Yes, what is your budget for monthly investment?",
+		"a2" : "500 below,1000 below,1500 below,2000 below",
+		"q3" : "Do you intend to buy for Own Stay or Investment?",
+		"a3" : "Own Stay,Investment",
+		"q4" : "What type of Property interests you?",
+		"a4" : "Bungalow,Link House,Condo,Studio,SOHO,Others",
+		"q5" : "What is your targeted property value for your preferred property?",
+		"a5" : "RM 1mil and below,RM 750.000 and below,RM 500.000 and below,RM 250.000 and below",
+		"q6" : "In which region do you prefer to own a property?",
+		"a6" : "Northern,Central,Southern,East Coast",
+		"q7" : "What type of property topics are you interested in?",
+		"a7" : "Strategy & Tips to invest,How to get loan approval successfully,Tenant Management,Real Property Gain Tax,Mortgage Reduction,Interior Design,Lease To Own,Others",
+		"q8" : "What is the most important factor in your buying decision ?",
+		"a8" : "Low Down payment,Location,Reputation of Developer,Concept of Project,Competitive Selling Price,Reputation of Designer,Guaranteed Return of investment",
+		"first" : "text,Name,required,Name",
+		"second" : "number,Phone,required,Phone",
+		"third" : "email,Email,required,Email",
+		"email" : "ninjoe@mobileads.com",
+		"leadGenEle" : {
+			"leadGenTrackID" : "2164",
+			"elements" : [
+				{
+					"ele_label" : "Name :<br>",
+					"ele_name" : "text_0",
+					"ele_options" : "",
+					"ele_placeholder" : "Name",
+					"ele_type" : "text",
+					"ele_required" : "1"
+				},
+				{
+					"ele_label" : "Phone :<br>",
+					"ele_name" : "number_1",
+					"ele_options" : "",
+					"ele_placeholder" : "Phone",
+					"ele_type" : "number",
+					"ele_required" : "1"
+				},
+				{
+					"ele_label" : "Email :<br>",
+					"ele_name" : "email_2",
+					"ele_options" : "",
+					"ele_placeholder" : "Email",
+					"ele_type" : "email",
+					"ele_required" : "1"
+				}
+			]
+		}
+	},
+	"trackers": ["start","submit"]
+}

@@ -1,0 +1,58 @@
+json_data={
+	"userId" : "",
+	"id" : "",
+	"start_bg" : "img/bg.png",
+	"q_bg" : "img/bg_question.png",
+	"form_bg" : "img/bg_leadgen.png",
+	"submit" : "img/submit.png",
+	"end_bg" : "img/promo_code.png",
+	"q1" : "Where did you hear about MyRumah?",
+	"a1" : "News Paper,Radio,TV Ad,FB,Website,Others",
+	"q2" : "Do you intend to buy a property in next 6 months? If Yes, what is your budget for monthly investment?",
+	"a2" : "500 below,1000 below,1500 below,2000 below",
+	"q3" : "Do you intend to buy for Own Stay or Investment?",
+	"a3" : "Own Stay,Investment",
+	"q4" : "What type of Property interests you?",
+	"a4" : "Bungalow,Link House,Condo,Studio,SOHO,Others",
+	"q5" : "What is your targeted property value for your preferred property?",
+	"a5" : "RM 1mil and below,RM 750.000 and below,RM 500.000 and below,RM 250.000 and below",
+	"q6" : "In which region do you prefer to own a property?",
+	"a6" : "Northern,Central,Southern,East Coast",
+	"q7" : "What type of property topics are you interested in?",
+	"a7" : "Strategy & Tips to invest,How to get loan approval successfully,Tenant Management,Real Property Gain Tax,Mortgage Reduction,Interior Design,Lease To Own,Others",
+	"q8" : "What is the most important factor in your buying decision ?",
+	"a8" : "Low Down payment,Location,Reputation of Developer,Concept of Project,Competitive Selling Price,Reputation of Designer,Guaranteed Return of investment",
+	"first" : "text,Name,required,Name",
+	"second" : "number,Phone,required,Phone",
+	"third" : "email,Email,required,Email",
+	"email" : "ninjoe@mobileads.com",
+	"leadGenEle" : {
+		"leadGenTrackID" : "2164",
+		"elements" : [
+			{
+				"ele_label" : "Name :<br>",
+				"ele_name" : "text_0",
+				"ele_options" : "",
+				"ele_placeholder" : "Name",
+				"ele_type" : "text",
+				"ele_required" : "1"
+			},
+			{
+				"ele_label" : "Phone :<br>",
+				"ele_name" : "number_1",
+				"ele_options" : "",
+				"ele_placeholder" : "Phone",
+				"ele_type" : "number",
+				"ele_required" : "1"
+			},
+			{
+				"ele_label" : "Email :<br>",
+				"ele_name" : "email_2",
+				"ele_options" : "",
+				"ele_placeholder" : "Email",
+				"ele_type" : "email",
+				"ele_required" : "1"
+			}
+		]
+	}
+}

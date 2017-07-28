@@ -1,0 +1,107 @@
+@font-face {
+    font-family: OpenSans-Regular;
+    src: url(../fonts/OpenSans-Regular.ttf);
+}
+@font-face {
+    font-family: Gotham-Bold;
+    src: url(../fonts/Gotham-Bold.otf);
+}
+@font-face {
+    font-family: Gotham-Book;
+    src: url(../fonts/Gotham-Book.otf);
+}
+
+body {
+    -webkit-text-size-adjust: 100%;
+}
+
+#first {
+	width: 320px;
+	height: 250px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#second {
+	width: 320px;
+	height: 250px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+}
+
+#third {
+	width: 320px;
+	height: 250px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+}
+
+#forth {
+	width: 320px;
+	height: 250px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+}
+
+.question {
+	display: none;
+    width: 240px;
+    position: absolute;
+    left: 50%;
+    margin-left: -110px;
+    top: 45px;
+    font-size: 13px;
+    font-family: Gotham-Bold;
+}
+
+.question label {
+	font-size: 11px;
+	font-weight: normal;
+    font-family: Gotham-Book;
+}
+
+.question input[type="radio"] {
+	height: 10px;
+}
+
+#form {
+    position: absolute;
+    top: 60px;
+    left: 50px;
+}
+
+#submit {
+    width: 130px;
+    height: 30px;
+    position: absolute;
+    bottom: 35px;
+    left: 95px;
+}
+
+.lead_input {
+	width: 210px;
+    padding: 8px;
+    margin-bottom: 5px;
+    text-align: center;
+    color: green;
+    font-family: OpenSans-Regular;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: green;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: green;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: green;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: green;
+}
