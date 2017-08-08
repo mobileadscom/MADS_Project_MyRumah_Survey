@@ -5,14 +5,22 @@
 			"inputs" : [
 				{"title":"Start's Background", "value":"img/bg.png", "placeholder":"", "inputClass":"", "target" : "start_bg" },
 				{"title":"Question's Background", "value":"img/bg_question.png", "placeholder":"", "inputClass":"", "target" : "q_bg" },
+				{"title":"Question's Background 1", "value":"img/bg_question1.png", "placeholder":"", "inputClass":"", "target" : "q_bg1" },
+				{"title":"Question's Background 2", "value":"img/bg_question2.png", "placeholder":"", "inputClass":"", "target" : "q_bg2" },
+				{"title":"Question's Background 3", "value":"img/bg_question3.png", "placeholder":"", "inputClass":"", "target" : "q_bg3" },
+				{"title":"Question's Background 4", "value":"img/bg_question4.png", "placeholder":"", "inputClass":"", "target" : "q_bg4" },
+				{"title":"Question's Background 5", "value":"img/bg_question5.png", "placeholder":"", "inputClass":"", "target" : "q_bg5" },
+				{"title":"Question's Background 6", "value":"img/bg_question6.png", "placeholder":"", "inputClass":"", "target" : "q_bg6" },
+				{"title":"Question's Background 7", "value":"img/bg_question7.png", "placeholder":"", "inputClass":"", "target" : "q_bg7" },
 				{"title":"Form's Background", "value":"img/bg_leadgen.png", "placeholder":"", "inputClass":"", "target" : "form_bg" },
 				{"title":"Coupon Image", "value":"img/promo_code.png", "placeholder":"", "inputClass":"", "target" : "end_bg" },
-				{"title":"Submit's Image", "value":"img/submit.png", "placeholder":"", "inputClass":"", "target" : "submit" }
+				{"title":"Submit's Image", "value":"img/submit.png", "placeholder":"", "inputClass":"", "target" : "submit" },
+				{"title":"Submit's Loading Image", "value":"img/load.gif", "placeholder":"", "inputClass":"", "target" : "load" }
 			]
 		},
 		{
 			"name" : "Questions",
-			"inputs" : [
+			"polls" : [
 				{"title":"Question 1", "value":"Where did you hear about MyRumah?", "placeholder":"", "inputClass":"", "target" : "q1" },
 				{"title":"Answer 1", "value":"News Paper,Radio,TV Ad,FB,Website,Others", "placeholder":"", "inputClass":"", "target" : "a1" },
 				{"title":"Question 2", "value":"Do you intend to buy a property in next 6 months? If Yes, what is your budget for monthly investment?", "placeholder":"", "inputClass":"", "target" : "q2" },
@@ -46,8 +54,16 @@
 	"property" : {
 		"start_bg" : "img/bg.png",
 		"q_bg" : "img/bg_question.png",
+		"q_bg1" : "img/bg_question1.png",
+		"q_bg2" : "img/bg_question2.png",
+		"q_bg3" : "img/bg_question3.png",
+		"q_bg4" : "img/bg_question4.png",
+		"q_bg5" : "img/bg_question5.png",
+		"q_bg6" : "img/bg_question6.png",
+		"q_bg7" : "img/bg_question7.png",
 		"form_bg" : "img/bg_leadgen.png",
 		"submit" : "img/submit.png",
+		"load" : "img/load.gif",
 		"end_bg" : "img/promo_code.png",
 		"q1" : "Where did you hear about MyRumah?",
 		"a1" : "News Paper,Radio,TV Ad,FB,Website,Others",
@@ -99,5 +115,5 @@
 			]
 		}
 	},
-	"trackers": ["start","submit"]
+	"trackers": ["start","submit","q1a1","q1a2","q1a3","q1a4","q1a5","q1a6","q2a1","q2a2","q2a3","q2a4","q3a1","q3a2","q4a1","q4a2","q4a3","q4a4","q4a5","q4a6","q5a1","q5a2","q5a3","q5a4","q6a1","q6a2","q6a3","q6a4","q7a1","q7a2","q7a3","q7a4","q7a5","q7a6","q7a7","q7a8","q8a1","q8a2","q8a3","q8a4","q8a5","q8a6","q8a7"]
 }

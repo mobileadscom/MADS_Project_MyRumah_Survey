@@ -189,7 +189,6 @@ mads.prototype.linkOpener = function(url) {
 
 /* tracker */
 mads.prototype.tracker = function(tt, type, name, value) {
-
     /*
      * name is used to make sure that particular tracker is tracked for only once
      * there might have the same type in different location, so it will need the name to differentiate them
@@ -426,6 +425,7 @@ ad.prototype.render = function() {
     <div id="third">\
     <form id="form"><div id="formInputs"></div><button type="submit" id="submitBtn"></button></form>\
     <div id="submit"></div>\
+    <img id="loading" src="' + this.app.data.load + '"/>\
     </div>\
     <div id="forth" style=""></div>\
     </div>';
@@ -454,8 +454,14 @@ ad.prototype.render = function() {
         'display' : 'none'
     })
 
-    console.log(this.app.data)
-    console.log(this.app.leadData)
+    this.progressImage = ['', this.app.data.q_bg1,this.app.data.q_bg2,this.app.data.q_bg3,this.app.data.q_bg4,this.app.data.q_bg5,this.app.data.q_bg6,this.app.data.q_bg7]
+
+    this.images = [];
+    for (var x = 1; x <= this.progressImage.length; x++) {
+        (new Image).src = this.progressImage[x];
+        this.images[x] = new Image();
+        this.images[x].src = this.progressImage[x];
+    }
 
     _this.leadgen = new leadgen({
         target : '#formInputs',
@@ -463,13 +469,6 @@ ad.prototype.render = function() {
         app : _this.app
     })
     
-    /*
-    '<input type="text" name="name" id="name" placeholder="NAMA" required/>' +
-    '<input type="number" name="no" id="no" placeholder="NO. TELP" required/><br/>' +
-    '<input type="text" name="city" id="city" placeholder="KOTA" required/><br/>' +
-    '<input type="email" name="email" id="email" placeholder="EMAIL" required/><br/>' +
-    */
-
     this.eles = this.app.extractBit('div, img, button, form, input, select', content);
 
     this.events();
@@ -485,7 +484,8 @@ ad.prototype.questions = function () {
         var a = this.app.data['a' + i].split(',');
         var answers = '';
         for (var x = 0; x < a.length; x++) {
-            answers += '<div><label><input type="radio" name="a_' + i + '" value="' + a[x] + '"/>' + a[x] + '</label></div>';
+            var t = x + 1;
+            answers += '<div><label><input type="radio" name="q' + i + '" value="a' + t + '"/>' + a[x] + '</label></div>';
         }
 
         questions += '<div id="question_' + i + '" class="question"><div>' + this.app.data['q' + i] + '</div><div>' + answers + '</div></div>';
@@ -508,12 +508,18 @@ ad.prototype.events = function () {
     var radios = document.querySelectorAll('input[type=radio]');
     for (var i = 0; i < radios.length; i++) {
         radios[i].addEventListener('click', function () {
-            console.log(event.target.value)
-            console.log(event.target.name)
+            //console.log(event.target.name)
+            //console.log(event.target.value)
 
+            _this.app.tracker('E', event.target.name + event.target.value)
+console.log(event.target.name[1])
+console.log(_this.progressImage[event.target.name[1]])
             if (event.target.parentElement.parentElement.parentElement.parentElement.nextSibling != null) {
                 _this.eles[event.target.parentElement.parentElement.parentElement.parentElement.id].fadeOut();
                 _this.eles[event.target.parentElement.parentElement.parentElement.parentElement.nextSibling.id].fadeIn();
+
+                //_this.eles.second.style.background = 'url(' + _this.progressImage[event.target.name[1]] + ')';
+                _this.eles.second.style.background = 'url(' + _this.images[event.target.name[1]].src + ')';
             } else {
                 _this.eles.second.fadeOut();
                 _this.eles.third.fadeIn();
@@ -533,16 +539,23 @@ ad.prototype.events = function () {
         console.log('submit')
         console.log(_this.leadgen.submissionUrl())
 
-        _this.eles.third.fadeOut();
-        _this.eles.forth.fadeIn();
+        _this.eles.submit.fadeOut();
+        _this.eles.loading.fadeIn();
+
+        _this.app.loadJs(_this.leadgen.submissionUrl())
 
         return false;
     })
+}
+
+ad.prototype.submitCallback = function () {
+    this.eles.third.fadeOut();
+    this.eles.forth.fadeIn();
 }
 
 var myrumah = new ad();
 
 /* leadgen callback */
 function leadGenCallback(obj) {
-    
+    myrumah.submitCallback();
 }
