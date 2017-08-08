@@ -57,6 +57,20 @@ var mads = function(options) {
     });*/
 
     if (typeof preview != 'undefined') {
+        window.addEventListener('message', function (e) {
+            if (typeof e.data.auth != 'undefined' && e.data.auth == 'preview') {
+                console.log(e.data.data)
+
+                _this.data = e.data.data.data;
+                _this.leadData = e.data.data.leadgen;
+                _this.userId = e.data.data.userId;
+                _this.studioId = e.data.data.studioId;
+                setTimeout(function () {
+                    _this.render.render();            
+                },1)
+            }
+        })
+        /*
         _this.data = preview.data;
         _this.leadData = preview.leadgen;
         _this.userId = preview.userId;
@@ -64,6 +78,7 @@ var mads = function(options) {
         setTimeout(function () {
             _this.render.render();            
         },1)
+        */
     } else if (typeof md5 != 'undefined') {
         this.loadJs('https://cdn.richmediaads.com/studio-full/' + md5 + '.json?pgId=' + this.pgId, function () {
             _this.userId = data_studiofull.userId;
@@ -114,10 +129,13 @@ var mads = function(options) {
 
     /* tags */
     if (typeof tags == 'undefined' && typeof tags != 'undefined') {
+        this.lead_tags = this.leadTagsProcess(rma.tags);
         this.tags = this.tagsProcess(rma.tags);
     } else if (typeof tags != 'undefined') {
+        this.lead_tags = this.leadTagsProcess(tags);
         this.tags = this.tagsProcess(tags);
     } else {
+        this.lead_tags = '';
         this.tags = '';
     }
 
@@ -164,6 +182,18 @@ mads.prototype.tagsProcess = function(tags) {
     }
 
     return tagsStr;
+}
+
+mads.prototype.leadTagsProcess = function (tags) {
+    var tagsStr = '';
+
+    for (var obj in tags) {
+        if (tags.hasOwnProperty(obj)) {
+            tagsStr += tags[obj] + ',';
+        }
+    }
+
+    return tagsStr.slice(0, -1);
 }
 
 /* Link Opner */
@@ -382,7 +412,7 @@ leadgen.prototype.submissionUrl = function () {
     var userId = _this.app.userId;
     var studioId = _this.app.studioId;
     var tabId = 1;
-    var referredURL = '';
+    var referredURL = _this.app.lead_tags;
     console.log(_this.app.leadData)
     console.log(trackId)
     for (var i = 0; i < elements.length; i++) {
@@ -409,7 +439,7 @@ var ad = function() {
 
     this.app.loadCss(this.app.path + 'css/style.css')
 
-    this.submmitted = false;
+    this.submitted = false;
 }
 
 ad.prototype.render = function() {
@@ -512,8 +542,8 @@ ad.prototype.events = function () {
             //console.log(event.target.value)
 
             _this.app.tracker('E', event.target.name + event.target.value)
-console.log(event.target.name[1])
-console.log(_this.progressImage[event.target.name[1]])
+            console.log(event.target.name[1])
+            console.log(_this.progressImage[event.target.name[1]])
             if (event.target.parentElement.parentElement.parentElement.parentElement.nextSibling != null) {
                 _this.eles[event.target.parentElement.parentElement.parentElement.parentElement.id].fadeOut();
                 _this.eles[event.target.parentElement.parentElement.parentElement.parentElement.nextSibling.id].fadeIn();
@@ -535,14 +565,20 @@ console.log(_this.progressImage[event.target.name[1]])
 
         event.preventDefault();
 
-        _this.app.tracker('E', 'submit')
-        console.log('submit')
-        console.log(_this.leadgen.submissionUrl())
+        if (!this.submitted) {
+            this.submitted = true;
 
-        _this.eles.submit.fadeOut();
-        _this.eles.loading.fadeIn();
+            _this.app.tracker('E', 'submit')
+            console.log('submit')
+            console.log(_this.leadgen.submissionUrl())
 
-        _this.app.loadJs(_this.leadgen.submissionUrl())
+            _this.eles.submit.fadeOut();
+            _this.eles.loading.fadeIn();
+
+
+
+            _this.app.loadJs(_this.leadgen.submissionUrl())
+        }
 
         return false;
     })
