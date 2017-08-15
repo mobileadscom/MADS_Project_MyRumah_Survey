@@ -177,7 +177,7 @@ mads.prototype.tagsProcess = function(tags) {
 
     for (var obj in tags) {
         if (tags.hasOwnProperty(obj)) {
-            tagsStr += '&' + obj + '=' + tags[obj];
+            tagsStr += '&' + obj + '=' + encodeURIComponent(tags[obj]);
         }
     }
 
